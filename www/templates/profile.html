@@ -1,0 +1,55 @@
+<ion-view view-title="Perfil">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+
+
+
+        <div class="hero slide-up"  ng-controller="ImagePickerController" style="background-image: url('http://www.im20.org/ionicBD/img/panel.jpg');">
+            <div class="content">
+                <img class="avatar"  style="background-image: url('http://www.im20.org/ionicBD/img/Carlitos.png');">
+                <h4>.</h4>
+            </div>
+
+        </div>
+
+        <div class="tabs tabs-dark tabs-icon-top static" ng-controller="EntrarCtrl">
+          <a ui-sref="app.profile.friends" class="tab-item">
+                <i class="icon ion-android-people"></i> Clientes
+            </a>
+            <a ui-sref="app.profile.activity" class="tab-item">
+                <i class="icon ion-ios-compose"></i>Reportes
+            </a>
+            <a ui-sref="app.profile.gallery" class="tab-item">
+                <i class="icon ion-bag"></i> Productos
+            </a>
+              <a ui-sref="app.profile.imagen" class="tab-item">
+                <i class="icon ion-android-upload"></i>  Cargar Imagen
+            </a>
+        </div>
+
+        <div class="list animate-fade-slide-in-right">
+
+        <div class="card">
+            <div class="item item-divider">
+              <center><h2><strong>Nuevo costo de Kwh para Puerto Rico</strong></h2></center>
+               <hr>
+            </div>
+              <div class="item item-text-wrap">
+                 <center><img src="http://www.im20.org/ionicBD/img/noticias.jpg" height="300px"></center>
+                <br/>
+                <p>
+                  Climactiva les complace informarles que el costo de kilovatio por hora promedio residencial es de $0.20 durante el mes de marzo del 2017.
+                </p>
+              </div>
+            </div>
+        </div>
+
+        
+
+
+        
+
+       
+
+
+    </ion-content>
+</ion-view>

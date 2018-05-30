@@ -1,0 +1,112 @@
+<ion-view view-title="Climactiva" align-title="left" >
+    <ion-content style="background: url(img/fondo-negro.jpg) center; background-size: cover;">
+        <div class="hero no-header flat">
+            <div class="content">
+                <div class="app-icon"></div>
+            </div>
+        </div>
+        <div class="list " ng-controller="EntrarCtrl">
+            <ion-md-input placeholder="Usuario" highlight-color="balanced" type="text" ng-model="usuario"></ion-md-input>
+            <ion-md-input placeholder="Contraseña" highlight-color="energized" type="password" ng-model="password"></ion-md-input>
+            <div class="padding">
+            	<button class="button button-full button-positive ink" ng-click="login(profile)">Entrar</button>
+            	<input type="checkbox"  id="spoiler2" /> 
+            <label class="button button-full button-calm" for="spoiler2" >Crear mi cuenta</label>
+            <div class="spoiler" class="button button-full button-positive ink"> 
+             <div class="list card" ng-controller="LoginCtrl">
+
+              <form name="register" class="formulario"novalidate>
+                  <label class="item item-input item-floating-label"><span class="input-label">Usuario</span><a class="ion-close-round" style="color:#d32f2f;" ng-show="register.username.$error.required && !register.username.$pristine"></a> 
+                  <input type="text" name="username" ng-model="usuario1" placeholder="Usuario" required>
+                  </label>
+                  <label class="item item-input item-floating-label"> <span class="input-label">Contraseña</span><a class="ion-close-round" style="color:#d32f2f;" ng-show="register.password.$error.required && !register.password.$pristine"></a> 
+                    <input type="password" name="password" ng-model="password2" placeholder="Contraseña" required>
+                  </label>
+                   <label class="item item-input item-floating-label"> <span class="input-label">Nombre</span><a class="ion-close-round" style="color:#d32f2f;" ng-show="register.nombre.$error.required && !register.nombre.$pristine"></a> 
+                    <input type="text" name="nombre" ng-model="nombre" placeholder="Nombres" required>
+                  </label>
+                  <label class="item item-input item-floating-label"> <span class="input-label">Apellido</span><a class="ion-close-round" style="color:#d32f2f;" ng-show="register.nombre.$error.required && !register.nombre.$pristine"></a> 
+                    <input type="text" name="apellido" ng-model="apellido" placeholder="Apellidos" required>
+                  </label>
+                   <label class="item item-input item-floating-label"><span class="input-label">Email</span> 
+                    <input  type="email" name="correo" ng-model="correo" placeholder="Email" required>
+                  </label>
+                   <label class="item item-input item-floating-label"> <span class="input-label">Teléfono</span> 
+                   <a class="ion-close-round" style="color:#d32f2f;" ng-show="register.telf.$error.required && !register.telf.$pristine"></a> <input type="tel"  ng-model="telf" name="telf" placeholder="Teléfono" required>
+                  </label>
+                  <label class="item item-input item-floating-label"> <span class="input-label">Dirección</span> 
+                   <a class="ion-close-round" style="color:#d32f2f;" ng-show="register.direccion.$error.required && !register.direccion.$pristine"></a> <input type="text"  ng-model="direccion" name="direccion" placeholder="Dirección" required>
+                  </label>
+                  <label class="item item-input item-floating-label"> <span class="input-label">País</span> <a class="ion-close-round" style="color:#d32f2f;" ng-show="register.pueblo.$error.required && !register.pueblo.$pristine"></a>
+                    <input type="text"  ng-model="pueblo" name="pueblo" placeholder="País" required>
+                  </label>
+                   <label class="item item-input item-floating-label"> <span class="input-label">Cargar Imagen Corporativa</span> <a class="ion-close-round" style="color:#d32f2f;" ng-show="register.pueblo.$error.required && !register.pueblo.$pristine"></a>
+                    <input type="file"  ng-model="imagen" name="imagen" placeholder="Cargar Imagen Corporativa" required>
+                  </label>
+                  <button class="button button-full button-balanced ink" ng-disabled="register.$invalid" ng-click="entrar(espera)" >Registrar</button>
+                  </form>
+                  <div class="list">
+                    <a class="item item-divider" ng-show="register.correo.$invalid && !register.correo.$pristine" style="background: #ce2f2f center; color: #fff; border-radius: 20px;"> Debe ser un correo!... Ej: im@dominio.com</a>
+                  </div>
+            </div> 
+
+
+
+
+
+        </div>
+            </div>
+        </div>
+
+
+
+
+     
+       
+     
+     
+   
+
+          
+
+<style type="text/css" media="screen">
+
+input[id^="spoiler"]{
+ display: none;
+}
+input[id^="spoiler"] + label {
+  display: block;
+  padding: 5px 20px;
+  background: #377d8e;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0s;
+}
+input[id^="spoiler"]:checked + label {
+  color: #ffffff;
+  
+}
+input[id^="spoiler"] ~ .spoiler {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin: 10px auto 0; 
+  padding: 10px; 
+  background: #26a4e2;
+  border-radius: 4px;
+  transition: all 0s;
+}
+input[id^="spoiler"]:checked + label + .spoiler{
+  height: auto;
+  opacity: 1;
+  padding: 10px;
+}
+</style>
+
+
+<!--div class="loader"><svg class="circular"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/></svg></div!-->
+    </ion-content>
+</ion-view>
+
+ 

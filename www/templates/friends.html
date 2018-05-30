@@ -1,0 +1,40 @@
+<ion-view view-title="Clientes" ng-controller="ClientesEditCtrl">
+  <ion-content ng-class="{expanded:isExpanded}">
+    <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.profile.form" class="tab-item">
+                <i class="icon ion-compose"></i> Registro de Cliente
+            </a>
+        </div>
+
+      <div class="content has-header">
+            <div class="list">
+
+        <a href="#/app/vista-cliente/{{usuario.id_clientes}}" class="item-icon-right item-avatar item in done" ng-repeat="usuario in equipos">
+                    <img src="img/Carlitos.png">
+                    <h2>{{usuario.name_c}}</h2>
+                    <p> {{usuario.physical}}</p>
+                    <i class="icon ion-edit"></i>
+                </a>
+            </div>
+        </div>
+     
+  </ion-content>
+</ion-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

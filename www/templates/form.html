@@ -1,0 +1,42 @@
+<ion-view view-title="Registrar de Cliente">
+    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
+ 
+ <div class="list card">
+
+<form ng-controller="RegistrarCtrl" name="formulario" novalidate >
+
+  <label class="item item-input item-stacked-label">
+  <i class="icon ion-ios-person"></i>
+    <span class="input-label">Nombre del Cliente</span>
+    <input type="text" ng-model="name_c" name="nombre" placeholder="Nombre del Cliente. Ej: Roberto montoya" required><a class="ion-close-round" style="color:#d32f2f;" ng-show="formulario.nombre.$error.required && !formulario.nombre.$pristine"></a>
+  </label>
+
+  <label class="item item-input item-stacked-label">
+  <i class="icon ion-ios-telephone"></i>
+    <span class="input-label">Teléfono</span>
+    <input type="number" ng-model="tel1" name="telf" placeholder="Número telefónico. Ej: +507 6217-8590" required><a class="ion-close-round" style="color:#d32f2f;" ng-show="formulario.telf.$error.required && !formulario.telf.$pristine"></a>
+  </label>
+
+  <label class="item item-input item-stacked-label">
+  <i class="icon ion-ios-email"></i>
+    <span class="input-label">Email</span>
+    <input type="email" ng-model="email_c" name="email" placeholder="Ej: im@hotmail.com" required><a class="ion-close-round" style="color:#d32f2f;" ng-show="formulario.email.$error.required && !formulario.email.$pristine"></a>
+  </label>
+
+  <label class="item item-input item-stacked-label">
+  <i class="icon ion-ios-location"></i>
+    <span class="input-label">Dirección Fisica</span>
+    <input type="text" ng-model="physical" name="direccion" placeholder="Dirección fisica del cliente." required><a class="ion-close-round" style="color:#d32f2f;" ng-show="formulario.direccion.$error.required && !formulario.direccion.$pristine"></a>
+  </label>
+
+  <button class="button button-block button-calm" ng-disabled="formulario.$invalid" ng-click="register()">Registrar</button>
+    <div class="list">
+    <a class="item item-divider" ng-show="formulario.email.$invalid && !formulario.email.$pristine" style="background: #ce2f2f center; color: #fff; border-radius: 20px;"> Debe ser un correo!... Ej: im@dominio.com</a>
+  </div>
+</form>
+</div>  
+
+
+
+    </ion-content>
+</ion-view>

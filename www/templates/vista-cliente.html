@@ -1,0 +1,38 @@
+<ion-view view-title="Clientes" ng-controller="ClienteUpdateCtrl" >
+    <ion-content ng-class="{expanded:isExpanded}">
+
+    <div class="list card">
+    
+        <form ng-controller="ClienteUpdateCtrl" ng-repeat="usuario in clientes">
+
+          <label class="item item-input item-stacked-label">
+            <i class="icon ion-ios-person"></i>
+            <span class="input-label">Nombre del Cliente</span>
+            <input type="text" ng-model="usuario.name_c">
+          </label>
+
+          <label class="item item-input item-stacked-label">
+            <i class="icon ion-ios-telephone"></i>
+            <span class="input-label">Teléfono</span>
+            <input type="tel" ng-model="usuario.tel1">
+          </label>
+
+          <label class="item item-input item-stacked-label">
+            <i class="icon ion-ios-email"></i>
+            <span class="input-label">Email</span>
+            <input type="email" ng-model="usuario.email_c">
+          </label>
+
+          <label class="item item-input item-stacked-label">
+            <i class="icon ion-ios-location"></i>
+            <span class="input-label">Dirección Fisica</span>
+            <input type="text" ng-model="usuario.physical">
+          </label>
+        <div class="button-bar">
+          <a class="button button-block button-calm" ng-click="update()"> Actualizar</a>
+        </div>
+        </form>
+
+    </div>
+  </ion-content>
+</ion-view>

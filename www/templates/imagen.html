@@ -1,0 +1,24 @@
+<ion-view view-title="Carga de imagen" ng-controller="imagen" >
+    <ion-content ng-class="{expanded:isExpanded}" ng-controller="ImagePickerController" >
+
+
+
+
+
+            <div style="height: 300px;">    
+                <button class="button button-full  button-outline button-positive" ng-click="selectImage()">
+                    Selecciona la imagen
+                </button>
+
+                <img class="full-image" src="{{picData}}" />
+          
+                  <div  ng-controller="ImagePickerController">
+                    <button class="button button-full button-positive" ng-click="testFileUpload()">Cargar imagen</button>
+                  </div>
+            </div>
+     
+
+
+    </ion-content>
+</ion-view>
+

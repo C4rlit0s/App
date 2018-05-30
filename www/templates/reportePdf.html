@@ -1,0 +1,99 @@
+<ion-view view-title="Ver Reporte" ng-controller="VerReporteCtrl">
+    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
+        
+        <div class="tabs tabs-dark tabs-icon-top static">
+
+             <a class="tab-item" ng-click="modal.show()">
+                <i class="icon ion-plus-round"></i> Añadir Equipo
+            </a>
+            <a class="tab-item" href="#/app/chart/{{usuario.id_reports}}" ng-repeat="usuario in equipo | limitTo: 1 ">
+                <i class="icon ion-ios-copy"></i> Reporte Pdf
+
+            </a>
+
+        </div>
+
+        <script id="templates/modal-equipo.html" type="text/ng-template">
+      <ion-modal-view style="width: 90%; height: 50%; top: 13%; left: 5%; right: 5%; bottom: 5%;">
+        <ion-header-bar class="bar bar-header bar-calm">
+          <h1 class="title">Seleccione su Categoría</h1>
+        </ion-header-bar>
+        <ion-content class="padding" style="background-color: white; opacity: 0.7;">
+          <div class="list">
+            <button class="button button-block button-positive" ng-click="modal.hide()" ui-sref="app.reportePdf.anadirequipo">Enseres</button>
+            <button class="button button-block button-positive" ng-click="modal.hide()" ui-sref="app.reportePdf.anadirequipo-aire">Aire Acondicionado</button>
+            <button class="button button-block button-positive" ng-click="modal.hide()" ui-sref="app.reportePdf.anadirequipo-iluminacion">Iluminación</button>
+            <button class="button button-block button-positive" ng-click="modal.hide()" ui-sref="app.reportePdf.anadirequipo-standby">STAND BY</button>
+            <button class="button button-block button-positive" ng-click="modal.hide()" ui-sref="app.reportePdf.anadirequipo-otros">Otros</button>
+          </div>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+
+
+        <div class="card" ng-repeat="usuario in equipo">
+          
+          <div class="item-text-wrap">
+           <center>{{usuario.name_ritems}}</center>
+          </div>
+           <div class="item-divider">
+           Potencia de Consumo
+          </div>
+          <div class="item-text-wrap">
+          {{usuario.consumo_ritems}} kW
+          </div>
+           <div class="item-divider">
+            Horas de Uso	
+          </div>
+          <div class="item-text-wrap">
+           {{usuario.horas_ritems}}
+          </div>
+           <div class="item-divider">
+            Días de Consumo
+          </div>
+          <div class="item-text-wrap">
+          {{usuario.dias}}
+          </div>
+          <div class="item-divider">
+            Gasto Mensual
+          </div>
+          <div class="item-text-wrap">
+         {{usuario.gasto_mensual}} kWh
+          </div>
+          <div class="item-divider">
+          % Consumo
+          </div>
+          <div class="item-text-wrap">
+          {{ usuario.temperatura }} %
+          </div> 
+              <div class="button-bar">
+              <a href="#/app/form-equipo-edit/{{usuario.id_ritems}}" class="button button-balanced"> Editar</a> 
+                <a class="button button-dark " ng-click="activitydel({{usuario.id_ritems}})">Eliminar</a>
+                
+              </div>
+        </div>
+        
+        <div class="item-divider">
+            Total Verificado de Gastos Mensuales
+          </div>
+          <div class="item-text-wrap" ng-controller="VerReporteCtrl" ng-repeat="gasto in gastos">{{gasto.gasto}} kWh</div>
+          <div class="item-divider">
+          Resto de la Propiedad
+          </div>
+          <div class="item-text-wrap" ng-repeat="usuario in report">
+          {{ (total - (usuario.aver_pay_energy / usuario.report_price)).toFixed(2) }} %
+          </div> 
+          <div class="item-divider">
+          Pago Promedio de Energia
+          </div>
+          <div class="item-text-wrap" ng-repeat="usuario in report">
+          {{ (usuario.aver_pay_energy / usuario.report_price).toFixed(2) }} %
+          </div> 
+          <div class="item-divider" ng-repeat="usuario in report">
+            {{usuario.report_price}}  Centavos Kwh
+          </div>
+          
+
+    </ion-content>
+</ion-view>
+

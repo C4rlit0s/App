@@ -1,0 +1,31 @@
+<ion-view view-title="Actividades" ng-controller="Cliente-ActivityCtrl">
+    <ion-content ng-class="{expanded:isExpanded}">
+
+        
+
+         <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.profile.formactividad" class="tab-item">
+                <i class="icon ion-compose"></i>Registro de Actividades
+            </a>
+        </div>
+      
+        
+
+
+        <div class="content has-header">
+            <div class="list animate-fade-slide-in-right card">
+
+                <a href="#/app/vista-actividad/{{usuario.id_recuerdame}}" class="item-icon-right item-avatar item in done" ng-repeat="usuario in cliente">
+
+                    <img src="img/Carlitos.png">
+                    <h2>{{usuario.name_c}}</h2>
+                    <h2>{{usuario.fecha_recuerdame}}</h2>
+                    <h2>{{usuario.servicio_recuerdame}}</h2>
+                    
+                    <i class="icon ion-android-list"></i>
+                </a>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,81 @@
+<ion-view view-title="Añadir Equipo - Otros" ng-controller="ClienteEditCtrl" no-drag-right>
+    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in" drag-content="false">
+ 
+ <div class="list card">
+
+ <input type="hidden" ng-model="temperatura" ng-init="temperatura=''" />
+
+<form name="formulario" ng-controller="AnadirEquipoFormCtrl" novalidate>
+<label class="item item-input item-stacked-label">
+  <i class="icon ion-ios-home"></i>
+    <span class="input-label">Categoría</span>
+    <input type="text" ng-model="cat" ng-init="cat='Otros'" placeholder="Enseres" readonly>
+  </label>
+
+<label class="item item-input item-stacked-label">
+  <i class="icon ion-ios-home"></i>
+    <span class="input-label">Equipo:</span>
+    <input type="text" ng-model="equipo" placeholder="Ej: Split, Central, Pared, etc..." >
+  </label>
+
+   <label class="item item-input item-stacked-label">
+  <i class="icon ion-pricetags"></i>
+    <span class="input-label">Marca:</span>
+    <input type="text" ng-model="marca" placeholder="Marca del equipo." >
+  </label>
+
+   <label class="item item-input item-stacked-label">
+  <i class="icon ion-ios-home"></i>
+    <span class="input-label">Tipo:</span>
+    <input type="text" ng-model="tipo" placeholder="Ej: Gas, Eléctrica, Es un equipo de ventana, etc..." >
+  </label>
+
+   <label class="item item-input item-stacked-label">
+  <i class="icon ion-arrow-graph-up-right"></i>
+    <span class="input-label">Capacidad:</span>
+    <input type="text" ng-model="btu" >
+  </label>
+
+  <label class="item item-input item-stacked-label">
+  <i class="icon ion-ios-home"></i>
+    <span class="input-label">Ubicación:</span>
+    <input type="text"  ng-model="area" placeholder="Ej: Sala, comerdor, cocina, etc..." >
+  </label>
+
+    <label class="item item-input item-stacked-label">
+  <i class="icon ion-ios-pulse-strong"></i>
+    <span class="input-label">Potencia Medida:</span>
+    <input type="text" ng-model="consumo_ritems" placeholder="" >
+  </label>
+
+    <label class="item item-input item-stacked-label">
+  <i class="icon ion-clock"></i>
+    <span class="input-label">Horas de uso diario:</span>
+    <input type="number" ng-model="horas_ritems" min="0" max="24" placeholder="Horas de consumo." >
+  </label>
+
+  <label class="item item-input item-stacked-label">
+  <i class="icon ion-ios-calendar"></i>
+    <span class="input-label">Cantidad de días de uso al mes:</span>
+    <input type="number" ng-model="dias" min="1" max="31" placeholder="Días de consumo." >
+  </label>
+
+   <label class="item item-input item-stacked-label">
+  <i class="icon ion-compose"></i>
+    <span class="input-label">Notas:</span>
+   <textarea type="text" ng-model="notas" placeholder="Ej: Requiere mantenimiento y servicios..."></textarea>
+  </label>
+
+   <label class="item item-input item-stacked-label">
+  <i class="icon ion-ios-book-outline"></i>
+    <span class="input-label">Recomendaciones</span>
+    <TEXTAREA type="text" ng-model="recomendaciones" placeholder="Ej: Requiere sistema de termostato..."></TEXTAREA>
+  </label>
+ 
+  <button class="button button-block button-calm" ng-disabled="formulario.$invalid" ng-click="registerequipo()">Registrar</button>
+  
+</form>
+</div>  
+
+    </ion-content>
+</ion-view>

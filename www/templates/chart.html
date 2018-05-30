@@ -1,0 +1,175 @@
+<ion-view view-title="Chart" align-title="left" ng-controller="ExampleController" >
+<ion-content ng-controller="ChartCtrl">
+
+    <div class="card" ng-controller="ChartCtrl">
+      <div class="item item-divider">
+        <center>Información del Cliente</center>
+      </div>
+      <div class="item item-text-wrap" ng-repeat="usuario in pdf | limitTo: 1">
+        <b>Nombre:</b> {{usuario.name_c}}<br>
+        <hr>
+        <b>Telefono:</b> {{usuario.tel1}}<br>
+        <hr>
+        <b>Email:</b> {{usuario.email_c}}
+      </div>
+
+      <div class="item item-divider">
+        <center>Consultor Climactiva</center>
+      </div>
+      <div class="item item-text-wrap" ng-repeat="usuario in pdf | limitTo: 1">
+        <b>Nombre:</b> {{usuario.nombre}}<br>
+        <hr>
+        <b>Telefono:</b> {{usuario.telf}} <br>
+        <hr>
+        <b>Email:</b> {{usuario.correo}} 
+      </div>
+    </div>
+
+    <div class="card" ng-controller="ChartCtrl">
+
+        <div class="row header">
+          <div class="col item-divider" style="border: solid 1px grey;"><center> Desglose de Consumo Top 10</center></div>
+        </div>
+        <div class="row header">
+           <div class="col item-divider" style="border: solid 1px grey;"><center>Equipo</center></div>
+          <div class="col item-divider" style="border: solid 1px grey;"><center>Consumo</center></div>
+        </div>
+
+        <div class="row" ng-controller="ChartCtrl" ng-repeat="usuario in equipo | orderBy:'-consumo_ritems'">
+          <div class="col" style="border: solid 1px grey;"><center><b>{{usuario.name_ritems}}</b></center></div>
+          <div class="col" style="border: solid 1px grey;"><center>{{usuario.consumo_ritems }} kWh</center></div>
+        </div>
+
+    </div>
+
+        <div class="row header">
+          <div class="col item-divider"><b>Enseres</b></div>
+        </div>
+        <div class="row" ng-controller="ChartCtrl" >
+          <div class="col" ng-repeat="usuario in enseres">{{usuario.name_ritems}}</div>
+        </div>
+
+        <div class="row header">
+       
+          <div class="col item-divider"><b>Aire Acondicionado</b></div>
+        </div>
+        <div class="row" ng-controller="ChartCtrl" >
+          
+          <div class="col" ng-repeat="usuario in aire">{{usuario.name_ritems}}</div>
+        </div>
+
+        <div class="row header">
+      
+          <div class="col item-divider"><b>Iluminación</b></div>
+      
+        </div>
+        <div class="row" ng-controller="ChartCtrl" >
+         
+          <div class="col" ng-repeat="usuario in iluminacion">{{usuario.name_ritems}}</div>
+        
+        </div>
+        <div class="row header">
+      
+          <div class="col item-divider"><b>Stand By</b></div>
+      
+        </div>
+        <div class="row" ng-controller="ChartCtrl" >
+         
+          <div class="col" ng-repeat="usuario in standby">{{usuario.name_ritems}}</div>
+        
+        </div>
+
+        <div class="row header">
+    
+          <div class="col item-divider"><b>Otros</b></div>
+        </div>
+        <div class="row" ng-controller="ChartCtrl" >
+     
+          <div class="col" ng-repeat="usuario in otros">{{usuario.name_ritems}}</div>
+        </div>
+
+
+
+    <!--div class="card" ng-controller="ChartCtrl" >
+            <div class="item item-divider">
+            <center>Distribución de Carga</center>
+            </div>
+          <div class="item-divider" >
+           Enseres
+          </div>
+          <div class="item-text-wrap" >
+          
+          </div>
+           <div class="item-divider">
+            Aire Acondicionado
+          </div>
+          <div class="item-text-wrap">
+           {{usuario.horas_ritems}}
+          </div>
+           <div class="item-divider">
+            Iluminación
+          </div>
+          <div class="item-text-wrap">
+          {{usuario.dias}}
+          </div>
+          <div class="item-divider">
+            Otros
+          </div>
+          <div class="item-text-wrap" ng-init="$parent.total = $parent.total + (usuario.consumo_ritems * usuario.horas_ritems * usuario.dias)">
+         
+          </div>
+   </div!-->
+
+
+    <center><div class="card" ng-controller="ChartCtrl">
+        <div class="item item-divider">
+            Distribución de Carga
+        </div>
+        <div class="item item-text-wrap" ng-repeat="usuario in pdf | limitTo: 1">
+            <canvas id="doughnut" chart-options="options" class="chart chart-doughnut" chart-data="data" chart-labels="labels"></canvas> 
+
+
+            <a id="link1" ng-click="done()" download="{{usuario.id_user_c}}.png">Save as png</a>
+           
+        </div>
+
+
+    </div></center>
+
+
+          <div class="card" ng-controller="ChartCtrl">
+            <div class="item item-divider">
+              Notas:
+            </div>
+            <div class="item item-text-wrap" ng-repeat="usuario in equipo">
+              <b>{{usuario.name_ritems}}</b> - {{usuario.notas}}
+            </div>
+          </div>
+
+          <div class="card" ng-controller="ChartCtrl">
+            <div class="item item-divider">
+              Recomendaciones:
+            </div>
+            <div class="item item-text-wrap" ng-repeat="usuario in equipo">
+               <b>{{usuario.name_ritems}}</b> - {{usuario.recomendaciones}}
+            </div>
+          </div>
+
+        <div class="card list" ng-controller="paypal" >   
+           <center>
+                    <!--input ng-click="isDisabled=!isDisabled" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1"!-->
+                   
+                    <a ng-click="Pay();isDisabled=!isDisabled"><img src="https://secure.paguelofacil.com/images/botones/Boton_De_Pago_1_100.png" height="63" width="105" border="0" /></a>
+                    
+           </center> 
+<hr>
+           <div ng-controller="ExampleController">
+            <center><button ng-disabled="!isDisabled" class="button button-balanced" ng-click="print();isDisabled=!isDisabled">Imprimir Pdf's</button></center>
+           </div>    
+        </div>
+
+
+
+</ion-content>
+</ion-view>

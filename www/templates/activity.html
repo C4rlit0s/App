@@ -1,0 +1,33 @@
+<ion-view view-title="Reportes" >
+    <ion-content ng-class="{expanded:isExpanded}">
+
+        <div class="tabs tabs-dark tabs-icon-top static">
+
+             <a class="tab-item" ui-sref="app.profile.form-report">
+                <i class="icon ion-plus-round"></i> Añadir Reporte
+            </a>
+
+            <a class="tab-item" ui-sref="app.profile.cliente-activity">
+                <i class="icon ion-ios-copy-outline"></i> Ver Actividades
+            </a>
+             
+        </div>
+    
+
+        <ion-list class="has-header" ng-controller="ClienteEditCtrl">
+          <ion-item class="list item item-avatar card" ng-repeat="usuario in equipos">
+                    <img src="img/Carlitos.png">
+                    <h2>{{usuario.name_c}}</h2>
+                    <h2>{{usuario.date_reports}}</h2>
+                    <h2>{{usuario.id_rtype}}</h2>
+            
+            <ion-option-button class="button-positive button-small"><a href="#/app/reportePdf/{{usuario.id_reports}}" class="item"> Equipos <i class="icon ion-compose"></i></a></ion-option-button>
+            <ion-option-button class="button-calm button-small list"><a href="#/app/form-report-edit/{{usuario.id_reports}}" class="item"> Reporte <i class="icon ion-compose"></i></a></ion-option-button>
+          </ion-item>
+        </ion-list>
+
+    </ion-content>
+</ion-view>
+
+
+

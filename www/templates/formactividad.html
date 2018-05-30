@@ -1,0 +1,40 @@
+<ion-view view-title="Actividades" ng-controller="ClientesEditCtrl">
+    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
+  <div class="list card">
+  <div class="item item-divider item-stable">
+    <strong> <p align="center">Registro de Actividades </strong>
+  </div>
+  <label class="item item-input item-select" >
+    <div class="input-label item-text-wrap" >
+      Seleccione su cliente:
+    </div>
+    <select ng-model="id_clientes">
+      <option ng-repeat="usuario in equipos" value="{{usuario.id_clientes}}">{{usuario.name_c}}</option>
+    </select>
+  </label>
+
+  <form ng-controller="RecuerdameCtrl" name="validar" >
+  <label class="item item-input item-stacked-label">
+   <span class="input-label">Fecha del trabajo realizado</span>
+    <input type="date" ng-model="fecha_recuerdame" required>
+  </label>
+ <label class="item item-input item-stacked-label">
+  <span class="input-label">Servicios Realizados</span>
+    <input type="text" ng-model="servicio_recuerdame" required>
+  </label>
+   <label class="item item-input item-stacked-label">
+    <span class="input-label">Obervaciones</span>
+    <input type="text" ng-model="observacion_recuerdame" required>
+  </label>
+   <label class="item item-input item-stacked-label">
+    <span class="input-label">Recomendaciones</span>
+    <textarea ng-model="reco_recuerdame" required> </textarea>
+  </label>
+   <button class="button button-block button-positive ion-ios-folder" ng-click="recuerdame()" ng-disabled="validar.$invalid">
+  Guardar</button>
+  </form>
+</div>
+
+
+    </ion-content>
+</ion-view>

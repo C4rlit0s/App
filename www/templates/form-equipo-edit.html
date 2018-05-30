@@ -1,0 +1,89 @@
+<ion-view view-title="Editar Equipo" ng-controller="EditarEquipoCtrl">
+    <ion-content ng-class="{expanded:isExpanded}">
+ 
+ <div class="list card">
+
+<form ng-controller="EditarEquipoCtrl" ng-repeat="usuario in equipo">
+  <label class="item item-input item-select">
+  <i class="icon ion-android-funnel"></i>
+     <span class="input-label">Categoría</span>
+    <select ng-model="usuario.cat" name="type">
+            <option value="">Seleccione</option>
+            <option value="Enseres">Enseres</option>
+            <option value="Aire Acondicionado">Aire Acondicionado</option>
+            <option value="Iluminacion">Iluminacion</option>
+            <option value="StandBy">StandBy</option>
+            <option value="Otros">Otros</option>
+    </select>
+    </select>
+  </label>
+
+  <label class="item item-input item-stacked-label">
+  <i class="icon ion-ios-home"></i>
+    <span class="input-label">Equipo:</span>
+    <input type="text" ng-model="usuario.equipo" >
+  </label>
+
+  <label class="item item-input item-stacked-label">
+  <i class="icon ion-ios-home"></i>
+    <span class="input-label">Tipo:</span>
+    <input type="text" ng-model="usuario.tipo">
+  </label>
+
+  <label class="item item-input item-stacked-label">
+  <i class="icon ion-ios-home"></i>
+    <span class="input-label">Capacidad:</span>
+    <input type="text" ng-model="usuario.btu" >
+  </label>
+
+
+  <label class="item item-input item-stacked-label">
+  <i class="icon ion-ios-home"></i>
+    <span class="input-label">Área:</span>
+    <input type="text"  ng-model="usuario.area" >
+  </label>
+  <label class="item item-input item-stacked-label">
+  <i class="icon ion-pricetags"></i>
+    <span class="input-label">Marca:</span>
+    <input type="text" ng-model="usuario.marca" >
+  </label>
+
+  <label class="item item-input item-stacked-label">
+  <i class="icon ion-ios-pulse-strong"></i>
+    <span class="input-label">Consumo:</span>
+    <input type="text"  ng-model="usuario.consumo_ritems">
+    </label>
+
+  <label class="item item-input item-stacked-label">
+  <i class="icon ion-clock"></i>
+    <span class="input-label">Horas:</span>
+    <input type="text" ng-model="usuario.horas_ritems" >
+  </label>
+
+  <label class="item item-input item-stacked-label">
+  <i class="icon ion-ios-calendar"></i>
+    <span class="input-label">Días:</span>
+    <input type="text" ng-model="usuario.dias">
+  </label>
+
+  <label class="item item-input item-stacked-label">
+  <i class="icon ion-compose"></i>
+    <span class="input-label">Notas:</span>
+   <textarea type="text" ng-model="usuario.notas"></textarea>
+  </label>
+
+   <label class="item item-input item-stacked-label">
+  <i class="icon ion-ios-book-outline"></i>
+    <span class="input-label">Recomendaciones</span>
+    <TEXTAREA type="text" ng-model="usuario.recomendaciones"></TEXTAREA>
+  </label>
+  
+  
+ 
+  <button class="button button-block button-calm icon ion-loop" ng-click="updateequipo()"> Actualizar</button>
+  
+</form>
+</div>  
+
+    </ion-content>
+</ion-view>

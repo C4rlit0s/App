@@ -1,0 +1,16 @@
+{
+  "name": "sample",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.0.0-rc.2",
+    "ionic-material": "0.4.2",
+    "ion-md-input": "1.0.4"
+  },
+  "dependencies": {
+    "pdfmake": "^0.1.26",
+    "angular-pdf": "^1.5.1",
+    "chance": "^1.0.6",
+    "ionic-numberpicker": "^1.1.4",
+    "s3-image-uploader": "^1.3.0"
+  }
+}

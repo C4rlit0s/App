@@ -1,0 +1,177 @@
+<ion-view view-title="Reporte">
+    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
+ 
+ <div class="list card">
+
+ <form ng-controller="RegistrarReporteCtrl" name="formulario" novalidate >
+
+  
+
+<label class="item item-input item-select" >
+    <div class="input-label item-text-wrap">
+      Seleccione su cliente:
+    </div>
+    <select ng-model="id_reports">
+      <option ng-repeat="usuario in equipos1" value="{{usuario.id_clientes}}">{{usuario.name_c}}</option>
+    </select>
+  </label>
+
+  <label class="item item-input item-select">
+  <i class="icon ion-ios-list"></i>
+     <span class="input-label">Tipo de Reporte</span>
+    <select ng-model="id_rtype" name="type" required>
+      <option value="">Seleccione</option>
+      <option value="Residencial">Residencial</option>
+      <option value="Comercial">Comercial</option>
+      <option value="Industrial">Industrial</option>
+      
+    </select><a class="ion-close-round" style="color:#d32f2f;" ng-show="formulario.type.$error.required && !formulario.type.$pristine"></a>
+  </label>
+  <label class="item item-input item-stacked-label">
+  <i class="icon ion-ios-lightbulb"></i>
+    <span class="input-label">Pago Promedio de Energía Mensual</span>
+    <input type="text" ng-model="aver_pay_energy" name="pago" placeholder="Ej: 300.12$" required><a class="ion-close-round" style="color:#d32f2f;" ng-show="formulario.pago.$error.required && !formulario.pago.$pristine"></a>
+  </label>
+  <label class="item item-input item-stacked-label">
+  <i class="icon ion-card"></i>
+    <span class="input-label">Número de Cuenta</span>
+    <input type="text" ng-model="cuenta" name="cuenta" placeholder="Gas Natural Fenosa (NIS), ENSA (NAC)..." required><a class="ion-close-round" style="color:#d32f2f;" ng-show="formulario.cuenta.$error.required && !formulario.cuenta.$pristine"></a>
+  </label>
+  <label class="item item-input item-stacked-label">
+  <i class="icon ion-ios-paper"></i>
+    <span class="input-label">Fecha de Auditoría</span>
+    <input type="date" ng-model="date_reports" name="date" required><a class="ion-close-round" style="color:#d32f2f;" ng-show="formulario.date.$error.required && !formulario.date.$pristine"></a>
+  </label>
+  <label class="item item-input item-select">
+  <i class="icon ion-ios-pulse-strong"></i>
+    <div class="input-label">Precio de kWh</div>
+   <select ng-model="report_price" name="precio">
+          <option value="">Seleccione</option>
+           <option value="0.01">0.01 </option>
+           <option value="0.02">0.02 </option>
+           <option value="0.03">0.03 </option>
+           <option value="0.04">0.04 </option>
+           <option value="0.05">0.05 </option>
+           <option value="0.06">0.06 </option>
+           <option value="0.07">0.07 </option>
+           <option value="0.08">0.08 </option>
+           <option value="0.09">0.09 </option>
+           <option value="0.10">0.10 </option>
+           <option value="0.11">0.11 </option>
+           <option value="0.12">0.12 </option>
+           <option value="0.13">0.13 </option>
+           <option value="0.14">0.14 </option>
+           <option value="0.15">0.15 </option>
+           <option value="0.16">0.16 </option>
+           <option value="0.17">0.17 </option>
+           <option value="0.18">0.18 </option>
+           <option value="0.19">0.19 </option>
+           <option value="0.20">0.20 </option>
+           <option value="0.21">0.21 </option>
+           <option value="0.22">0.22 </option>
+           <option value="0.23">0.23 </option>
+           <option value="0.24">0.24 </option>
+           <option value="0.25">0.25 </option>
+           <option value="0.26">0.26 </option>
+           <option value="0.27">0.27 </option>
+           <option value="0.28">0.28 </option>
+           <option value="0.29">0.29 </option>
+           <option value="0.30">0.30 </option>
+           <option value="0.31">0.31 </option>
+           <option value="0.32">0.32 </option>
+           <option value="0.33">0.33 </option>
+           <option value="0.34">0.34 </option>
+           <option value="0.35">0.35 </option>
+           <option value="0.36">0.36 </option>
+           <option value="0.37">0.37 </option>
+           <option value="0.38">0.38 </option>
+           <option value="0.39">0.39 </option>
+           <option value="0.40">0.40 </option>
+           <option value="0.41">0.41 </option>
+           <option value="0.42">0.42 </option>
+           <option value="0.43">0.43 </option>
+           <option value="0.44">0.44 </option>
+           <option value="0.45">0.45 </option>
+           <option value="0.46">0.46 </option>
+           <option value="0.47">0.47 </option>
+           <option value="0.48">0.48 </option>
+           <option value="0.49">0.49 </option>
+           <option value="0.50">0.50 </option>
+      </select><a class="ion-close-round" style="color:#d32f2f;" ng-show="formulario.precio.$error.required && !formulario.precio.$pristine"></a>
+  </label>
+  <label class="item item-input item-select">
+  <i class="icon ion-ios-box"></i>
+    <div class="input-label">Mediciones en:</div>
+   <select ng-model="typocalc" name="datos" required>
+      <option value="">Seleccione</option>
+      <option value="dinero">$</option>
+      <option value="kw">kW (100W = 0.1 kW)</option>
+                        
+    </select><a class="ion-close-round" style="color:#d32f2f;" ng-show="formulario.datos.$error.required && !formulario.datos.$pristine"></a>
+  </label>
+
+  <label class="item item-input item-stacked-label">
+  <i class="ion-android-pin"></i>
+    <span class="input-label">Tamaño de la propiedad</span>
+ 
+      <div class="item row">
+      <div class="col col-50">
+        <label class="item-input">
+          <input type="text" ng-model="pies" placeholder="m2 / Ft2">
+        </label>
+
+        
+      </div>
+      <div class="col">
+       <label class="item">
+      <select ng-model="medida" name="medida"  style="
+    border: none;
+    background: #fff;
+    color: #333;
+    text-indent: 0.01px;
+    text-overflow: '';
+    white-space: nowrap;
+    font-size: 14px;
+    cursor: pointer;" required>
+            <option value="">Seleccione</option> 
+            <option value="p2" selected>Pies^2</option>
+            <option value="m2">Metros^2</option>            
+          </select><a class="ion-close-round" style="color:#d32f2f;" ng-show="formulario.medida.$error.required && !formulario.medida.$pristine"></a>
+          </label>
+      </div>
+    </div>
+     </label>
+                                      
+    </select><a class="ion-close-round" style="color:#d32f2f;" ng-show="formulario.pies.$error.required && !formulario.pies.$pristine"></a>
+  </label!-->
+
+  <label class="item item-input item-select">
+  <i class="icon ion-ios-people"></i>
+    <div class="input-label item-text-wrap">Personas que viven y/o Trabajan en la Propiedad</div>
+   <select ng-model="personas" name="personas" required>
+     <option value="">Seleccione</option>
+     <option value="1">1 </option>     
+     <option value="2">2 </option>     
+     <option value="3">3 </option>     
+     <option value="4">4 </option>     
+     <option value="5">5 </option>     
+     <option value="6">6 </option>     
+     <option value="7">7 </option>     
+     <option value="8">8 </option>     
+     <option value="9">9 </option>     
+     <option value="10">10 </option>     
+                                                  
+    </select><a class="ion-close-round" style="color:#d32f2f;" ng-show="formulario.personas.$error.required && !formulario.personas.$pristine"></a>
+  </label>
+
+  <button class="button button-block button-calm" ng-disabled="formulario.$invalid" ng-click="register()">Registrar</button>
+    <div class="list">
+    <a class="item item-divider" ng-show="formulario.email.$invalid && !formulario.email.$pristine" style="background: #ce2f2f center; color: #fff; border-radius: 20px;"> Debe ser un correo!... Ej: im@dominio.com</a>
+  </div>
+</form>
+</div>  
+
+
+
+    </ion-content>
+</ion-view>

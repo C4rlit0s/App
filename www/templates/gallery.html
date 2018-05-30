@@ -1,0 +1,191 @@
+<ion-view view-title="Galería de Productos" ng-controller="EquipoCtrl" >
+    <ion-content ng-class="{expanded:isExpanded}" ng-controller="EmailController" >
+    <div class="card">
+   
+     <div class="item item-avatar item-text-wrap">
+                <img src="http://www.im20.org/ionicBD/img/check.png">
+                    <strong>Envía por correo la cotización de productos a tus clientes.</strong>
+                </div>
+    </div>
+
+        <form ng-controller="DocumentController">        
+       
+           <div class=" list card ink" ng-repeat="equipos in equipo | filter:{ id: 1 }" > 
+
+
+                <ion-checkbox name="shop_nombre_equipo" ng-model="shop_nombre_equipo" ng-true-value="'Monitor de Energía'"
+                      ng-false-value="'No pedido'" ng-checked="equipos.shop_nombre_equipo == 'Monitor de Energía'">{{equipos.nombre_equipo}}</ion-checkbox> 
+
+                    <img class="full-image" src="{{equipos.image}}" />
+
+                      <div class="list card">
+
+                        <justify>{{equipos.presentacion}}</justify>
+                        <hr>
+                        <center>{{equipos.precio_equipo}}</center>
+
+                      
+                      </div>               
+            </div>
+            <label class="item item-input item-stacked-label item-select">
+                      <i class="icon ion-ios-cart"></i>
+                        <span class="input-label">Escoge la cantidad de Monitores:</span>
+                        <select name="cantidad" ng-model="cantidad">
+                            <option value="0" ng-selected="true">0</option>
+                            <option value="1"> 1</option>
+                            <option value="2"> 2</option>
+                            <option value="3"> 3</option>
+                            <option value="4"> 4</option>
+                            <option value="5"> 5</option>
+                            <option value="6"> 6</option>
+                            <option value="7"> 7</option>
+                            <option value="8"> 8</option>
+                            <option value="9"> 9</option>
+                            <option value="10"> 10</option>
+                            
+                        </select>
+
+                      </label>
+<hr>
+            <div class=" list card ink" ng-repeat="equipos in equipo | filter:{ id: 2 }" > 
+
+
+                <ion-checkbox ng-model="shop_nombre_equipo_2" ng-true-value="'Aire Acondicionado - WI-FI'"
+                      ng-false-value="'No pedido'">{{equipos.nombre_equipo}}</ion-checkbox> 
+
+                    <img class="full-image" src="{{equipos.image}}" />
+
+                      <div class="list card">
+
+                        <justify>{{equipos.presentacion}}</justify>
+                        <hr>
+                        <center>{{equipos.precio_equipo}}</center>
+
+                     
+                      </div>               
+            </div>
+             <label class="item item-input item-stacked-label item-select">
+                      <i class="icon ion-ios-cart"></i>
+                        <span class="input-label">Escoge la cantidad de Aires:</span>
+                        <select ng-model="cantidad_2" >
+                        <option value="0" ng-selected="true">0</option>
+                            <option value="1">1</option>
+                            <option value="2" >2</option>
+                            <option value="3" >3</option>
+                            <option value="4"> 4</option>
+                            <option value="5"> 5</option>
+                            <option value="6"> 6</option>
+                            <option value="7"> 7</option>
+                            <option value="8"> 8</option>
+                            <option value="9"> 9</option>
+                            <option value="10"> 10</option>
+                            
+                        </select>
+
+                      </label>
+<hr>
+            <div class=" list card ink" ng-repeat="equipos in equipo | filter:{ id: 3 }" > 
+
+
+                <ion-checkbox ng-model="shop_nombre_equipo_3" ng-true-value="'Regleta'"
+                      ng-false-value="'No pedido'">{{equipos.nombre_equipo}}</ion-checkbox> 
+
+                    <img class="full-image" src="{{equipos.image}}" />
+
+                      <div class="list card">
+
+                        <justify>{{equipos.presentacion}}</justify>
+                        <hr>
+                        <center>{{equipos.precio_equipo}}</center>
+
+                     
+                      </div>               
+            </div>
+             <label class="item item-input item-stacked-label item-select">
+                      <i class="icon ion-ios-cart"></i>
+                        <span class="input-label">Escoge la cantidad de Regletas:</span>
+                        <select ng-model="cantidad_3" >
+                            <option value="no seleccionado" ng-selected="true">0</option>
+                            <option value="1">1</option>
+                            <option value="2" >2</option>
+                            <option value="3" >3</option>
+                            <option value="4"> 4</option>
+                            <option value="5"> 5</option>
+                            <option value="6"> 6</option>
+                            <option value="7"> 7</option>
+                            <option value="8"> 8</option>
+                            <option value="9"> 9</option>
+                            <option value="10"> 10</option>
+                            
+                        </select>
+
+                      </label>
+
+          
+            <!--div class=" list card ink" ng-repeat="equipos in equipo" > 
+                <ion-checkbox ng-controller="DocumentController" ng-model="equipos.id" ng-true-value="{{equipos.id}}"
+                      ng-false-value="'No pedido'" ng-change="checkAll(equipos.id)">{{equipos.nombre_equipo}}</ion-checkbox> 
+                    <img class="full-image" src="{{equipos.image}}" />
+                      <div class="list card">
+                        <justify>{{equipos.presentacion}}</justify>
+                        <hr>
+                        <center>{{equipos.precio_equipo}}</center>
+
+                       <label class="item item-input item-stacked-label item-select">
+                      <i class="icon ion-ios-cart"></i>
+                        <span class="input-label">Escoge la cantidad:</span>
+                        <select ng-model="selected">
+                            <option selected>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            
+                        </select>
+                      </label>
+                      </div>               
+            </div!-->
+
+
+          <!--script id="pdf-viewer.html" type="text/ng-template">  
+              <ion-modal-view>
+
+              <ion-header-bar class="bar bar-header bar-calm">
+                  <h1 class="title">Cotización PDF</h1>
+                  <div>
+                  <button ng-click="vm.modal.hide()" class="button icon ion-close-circled"></button>
+                  <button ng-click="zoomIn()">+</span></button>
+                  <button ng-click="fit()">100%</span></button>
+                  <button ng-click="zoomOut()">-</span></button>
+                  </div>
+              </ion-header-bar>
+
+              <ion-content>
+                  <ng-pdf ng-if="pdfUrl" template-url="templates/viewer.html" canvasid="pdf" scale="page-fit"></ng-pdf>  
+              </ion-content>
+
+              </ion-modal-view>
+          </script!-->
+
+          <div class="item item-text-wrap">
+
+          <!--button class="button button-block button-positive" ng-click="vm.createInvoice()" id="btn">Cotizar Producto</button>
+
+           <!--a class="button button-block button-positive" href="mailto:someone@example.com?subject=This%20is%20the%20subject&cc=someone_else@example.com&body=This%20is%20the%20body">
+             Send feedbak
+          </a!-->
+
+          <button class="button button-block button-positive" ng-click="registerequipo();isDisabled=!isDisabled">Cotizar Producto</button>
+          
+ </form>
+           <div class="item item-text-wrap" ng-controller="DocumentController as vm">
+          <button class="button button-block button-balanced" ng-disabled="!isDisabled" ng-click="openInExternalBrowser()" id="btn">Descargar factura</button>
+          </div>
+           </div>
+    </ion-content>
+</ion-view>
